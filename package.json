@@ -4,12 +4,17 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "preandroid": "adb reverse tcp:9090 tcp:9090",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "dev:ios": "run-p start ios",
+    "dev:android": "run-p start android",
+    "dev": "run-p start ios android",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.12.1",
     "react": "16.11.0",
     "react-native": "0.62.2"
   },
@@ -26,8 +31,10 @@
     "eslint": "^6.5.1",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.58.0",
-    "react-test-renderer": "16.11.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
+    "react-test-renderer": "16.11.0",
+    "reactotron-react-native": "^5.0.0",
     "typescript": "^3.8.3"
   },
   "jest": {
