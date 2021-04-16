@@ -17,4 +17,4 @@ const create = () => {
   return ReactotronInstance;
 };
 
-export default create;
+export default create();
