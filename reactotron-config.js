@@ -1,14 +1,20 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import Reactotron from 'reactotron-react-native';
+import { reactotronRedux } from 'reactotron-redux';
 
 let ReactotronInstance = null;
 
-if (__DEV__) {
-  ReactotronInstance = Reactotron.setAsyncStorageHandler(AsyncStorage)
-    .configure()
-    .useReactNative()
-    .connect();
-  console.tron = ReactotronInstance.log;
-}
+const create = () => {
+  if (__DEV__) {
+    ReactotronInstance = Reactotron.setAsyncStorageHandler(AsyncStorage)
+      .configure()
+      .useReactNative()
+      .use(reactotronRedux())
+      .connect();
 
-export default ReactotronInstance;
+    console.tron = ReactotronInstance.log;
+  }
+  return ReactotronInstance;
+};
+
+export default create;
