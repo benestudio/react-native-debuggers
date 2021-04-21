@@ -1,6 +1,6 @@
 import { compose, createStore, applyMiddleware, Middleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import Reactotron from '../reactotron-config';
+import Reactotron from '../../reactotron-config';
 import rootReducer from './reducers';
 
 const middlewares: Middleware[] = [];

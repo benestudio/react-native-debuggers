@@ -1,6 +1,12 @@
 import { AnyAction, combineReducers } from 'redux';
 
-const dummyReducer = (state = { test: false }, action: AnyAction) => {
+export interface IState {
+  dummy: { test: boolean };
+}
+const dummyReducer = (
+  state: IState['dummy'] = { test: false },
+  action: AnyAction
+) => {
   switch (action.type) {
     case 'TEST':
       return { ...state, test: !state.test };

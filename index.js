@@ -4,7 +4,7 @@ import React from 'react';
 
 import { name as appName } from './app.json';
 import { Provider } from 'react-redux';
-import redux from './store';
+import redux from './src/store';
 
 const ConnectedApp = () => (
   <Provider store={redux.store}>
