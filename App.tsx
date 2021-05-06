@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { SafeAreaView, Text, StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 import Reactotron from './reactotron-config';
 import { IState } from './src/store/reducers';
@@ -12,10 +12,19 @@ const App = () => {
   return (
     <>
       <SafeAreaView>
-        <Text>asd</Text>
+        <Text style={styles.header}>This is a header</Text>
         <Text>{dummy.test ? 'Dummy' : 'Not dummy'}</Text>
       </SafeAreaView>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  header: {
+    textAlign: 'center',
+    marginTop: 40,
+    fontSize: 40,
+  },
+});
+
 export default Reactotron ? Reactotron.overlay(App) : App;
